@@ -1,0 +1,23 @@
+$static-path: '/static/teclisboa';
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,600&display=swap');
+
+$main-color: #009de0;
+$font-family-theme: 'Source Sans Pro', sans-serif;
+$bg-primary: #eef2f5;
+$link-header-color: #45555f;
+$link-header-color-hover: #0076dc;
+$footer-bg: #2E3342;
+$link-footer-color: #4D525E;
+$link-footer-hover: #0076DC;
+$homepage-bg-image: url('#{$static-path}/images/main-header-site.jpg');
+
+$primary: $main-color;
+
+$action-primary-bg: $main-color;
+$monospace: $font-family-theme;
+$serif: $font-family-theme;
+$f-serif: $font-family-theme;
+$f-monospace: $font-family-theme;
+$font-family-sans-serif: $font-family-theme;
+
+@import 'edx-bootstrap/sass/open-edx/theme';
