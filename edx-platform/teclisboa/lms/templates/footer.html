@@ -1,0 +1,81 @@
+## mako
+<%page expression_filter="h"/>
+<%!
+  from django.urls import reverse
+  from django.utils.translation import ugettext as _
+  from branding.api import get_footer
+  from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
+<%namespace name='static' file='static_content.html'/>
+
+  <div class="wrapper wrapper-footer">
+    <footer id="footer-openedx" class="grid-container"
+      ## When rendering the footer through the branding API,
+      ## the direction may not be set on the parent element,
+      ## so we set it here.
+      % if bidi:
+        dir=${bidi}
+      % endif
+      >
+      <div class="footer-links">
+        <ul>
+          <li class="nav-colophon">
+            <a href="https://tecnico.ulisboa.pt/pt/sobre-o-tecnico/">${_(u"Sobre o Técnico")}</a>
+          </li>
+          <li class="nav-colophon">
+            <a href="https://tecnico.ulisboa.pt/pt/contactos/">${_(u"Contactos Gerais")}</a>
+          </li>
+          <li class="nav-colophon">
+            <a href="https://tecnico.ulisboa.pt/pt/informacoes/termos-e-condicoes/">${_(u"Termos e Condições")}</a>
+          </li>
+        </ul>
+        <div class="social-links">
+          <a href="https://www.facebook.com/tecnico.ulisboa.pt">
+            <span class="fa fa-facebook"></span>
+          </a>
+          <a href="https://twitter.com/istecnico">
+            <span class="fa fa-twitter"></span>
+          </a>
+          <a href="https://www.linkedin.com/school/ist/">
+            <span class="fa fa-linkedin"></span>
+          </a>
+          <a href="https://www.youtube.com/user/isttv">
+            <span class="fa fa-youtube"></span>
+          </a>
+          <a href="https://www.instagram.com/tecnico_lisboa/">
+            <span class="fa fa-instagram"></span>
+          </a>
+        </div>
+      </div>
+
+      % if context.get('include_language_selector', footer_language_selector_is_enabled()):
+      <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
+      % endif
+
+      <div class="wrapper-logo">
+        <p>
+          <a href="/">
+            <img alt="${_('organization logo')}" src="${static.url('images/logo-footer.png')}">
+          </a>
+        </p>
+      </div>
+
+      <p class="copyright">
+        © Instituto Superior Técnico, Universidade de Lisboa
+      </p>
+    </footer>
+  </div>
+
+% if include_dependencies:
+  <%static:js group='base_vendor'/>
+  <%static:css group='style-vendor'/>
+  <%include file="widgets/segment-io.html" />
+  <%include file="widgets/segment-io-footer.html" />
+% endif
+% if footer_css_urls:
+  % for url in footer_css_urls:
+    <link rel="stylesheet" type="text/css" href="${url}"></link>
+  % endfor
+% endif
