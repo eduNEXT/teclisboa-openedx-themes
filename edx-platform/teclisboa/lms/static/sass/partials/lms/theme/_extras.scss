@@ -94,6 +94,10 @@
 	.find-courses .courses-container {
 		padding: 0 10px;
 	}
+
+	.find-courses .courses-container .courses:not(.no-course-discovery) {
+		width: 100%;
+	}
 }
 
 // Custom changes
@@ -197,6 +201,16 @@
 	}
 }
 
+.view-profile .profile-self .wrapper-profile-field-account-privacy .u-field-account_privacy,
+.view-profile .wrapper-profile-sections,
+.view-profile .badge-set-display {
+	min-width: auto;
+}
+
+.view-profile .badge-set-display .badge-display {
+    width: 100%;
+  }
+
 @media (min-width: 992px) {
 	.global-header .nav-links .main {
 		margin-top: 16px;
@@ -212,7 +226,7 @@
 }
 
 @media (max-width: 768px) {
-	.instructor-dashboard-wrapper-2 #student_admin input {
+	.window-wrap .instructor-dashboard-wrapper-2 section.idash-section#student_admin input[type="text"] {
 		width: 100%;
 	}
 }
@@ -261,6 +275,10 @@
 	.window-wrap .course-info header.course-profile .intro-inner-wrapper>div.table {
 		width: 90%;
 	}
+
+	.account-settings-sections .section .account-settings-section-body .u-field-social {
+		width: 100%;
+	}
 }
 
 @media screen and (max-width: 540px) {
@@ -268,6 +286,11 @@
 		width: 100%;
 		box-sizing: border-box;
 		margin-left: 0%;
+	}
+
+	.find-courses .courses-container {
+		display: flex;
+		flex-direction: column;
 	}
 }
 
@@ -286,7 +309,7 @@
 
 	.course-name {
 		overflow: hidden;
-    text-overflow: ellipsis;
+		text-overflow: ellipsis;
 	}
 
 	.provider,
