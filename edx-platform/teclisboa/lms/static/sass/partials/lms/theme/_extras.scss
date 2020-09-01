@@ -155,11 +155,10 @@
 
 .home>header {
 	background: theme-color("primary");
-	background-image: $homepage-bg-image;
 }
 
 .courses-header {
-	background-image: $homepage-bg-image;
+	background-image: $courses-bg-image;
 	margin-bottom: 20px;
 
 	.outer-wrapper {
@@ -320,6 +319,7 @@
 
 .course-info header.course-profile {
 	.intro-inner-wrapper {
+		background-image: url(/static/teclisboa/images/main-header-site.jpg);
 		padding: 3rem 0;
 	}
 
