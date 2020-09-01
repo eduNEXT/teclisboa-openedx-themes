@@ -5,6 +5,12 @@
   from django.utils.translation import ugettext as _
   from branding.api import get_footer
   from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
+  from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
+%>
+<%
+logo_footer_url = configuration_helpers.get_value('logo_footer_url', '/static/teclisboa/images/logo-footer.png')
+footer_copyright = configuration_helpers.get_value('footer_copyright', 'Instituto Superior Técnico, Universidade de Lisboa')
+footer_available_links = configuration_helpers.get_value('footer_available_links')
 %>
 <% footer = get_footer(is_secure=is_secure) %>
 <% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
@@ -20,17 +26,16 @@
       % endif
       >
       <div class="footer-links">
+        %if footer_available_links:
         <ul>
+          % for item in footer_available_links:
           <li class="nav-colophon">
-            <a href="https://tecnico.ulisboa.pt/pt/sobre-o-tecnico/">${_(u"Sobre o Técnico")}</a>
+            <a href="${item['url']}">${item['title']}</a>
           </li>
-          <li class="nav-colophon">
-            <a href="https://tecnico.ulisboa.pt/pt/contactos/">${_(u"Contactos Gerais")}</a>
-          </li>
-          <li class="nav-colophon">
-            <a href="https://tecnico.ulisboa.pt/pt/informacoes/termos-e-condicoes/">${_(u"Termos e Condições")}</a>
-          </li>
+          % endfor
         </ul>
+        %endif
+
         <div class="social-links">
           <a href="https://www.facebook.com/tecnico.ulisboa.pt">
             <span class="fa fa-facebook"></span>
@@ -57,13 +62,13 @@
       <div class="wrapper-logo">
         <p>
           <a href="/">
-            <img alt="${_('organization logo')}" src="${static.url('images/logo-footer.png')}">
+            <img alt="${_('organization logo')}" src="${logo_footer_url}">
           </a>
         </p>
       </div>
 
       <p class="copyright">
-        © Instituto Superior Técnico, Universidade de Lisboa
+        © ${footer_copyright}
       </p>
     </footer>
   </div>

@@ -6,11 +6,15 @@ from django.utils.translation import ugettext as _
 from django.urls import reverse
 
 from openedx.core.djangolib.markup import HTML, Text
+from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
+%>
+<%
+banner_image_url = configuration_helpers.get_value('banner_image_url', '/static/teclisboa/images/main-header-site.jpg')
 %>
 
 <main id="main" aria-label="Content" tabindex="-1">
     <section class="home">
-      <header>
+      <header style="background-image: url(${banner_image_url})">
         <div class="outer-wrapper">
           <div class="title">
             <div class="heading-group">
