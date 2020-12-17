@@ -369,3 +369,62 @@
 		}
 	}
 }
+
+//Static pages
+.static-page {
+	.pt-text,
+	.en-text {
+		font-size: .8rem;
+		color: #505050;
+		cursor: pointer;
+		text-align: center;
+		transition: .25s linear;
+		padding: 5px;
+		margin-right: 10px;
+		position: relative;
+	}
+
+	.pt-text.active,
+	.en-text.active {
+		color: $main-color;
+	}
+
+	h2 {
+		line-height: 130%;
+		color: #2E323E;
+		font-weight: bold;
+		font-size: 2rem;
+	}
+
+	h3 {
+		margin: 40px 0 20px;
+		font-weight: bold;
+	}
+
+	.lang-opt {
+		display: flex;
+	}
+
+	.pt-text::after,
+	.en-text::after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 2px;
+		background: #009DE0;
+		margin-top: 2px;
+		opacity: 0;
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		left: 50%;
+		position: absolute;
+		-webkit-transition: all .2s ease;
+		transition: all .2s ease;
+	}
+
+	.pt-text.active::after,
+	.en-text.active:after {
+		width: 100%;
+		opacity: 1;
+	}
+}

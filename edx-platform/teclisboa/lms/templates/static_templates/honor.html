@@ -1,0 +1,127 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Honor Code")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="static-page container about">
+	    <div class="lang-opt">
+    		<div class="pt-text active" for="pt">Português</div>
+        <div class="en-text" for="en">English</div>
+    	</div>
+	    <div class="pt translation">
+	    <section class="message left">
+	    <h2>Honor Code</h2>
+	    <!-- <h3>Código de Conduta</h3> -->
+	    <p>A inscrição e participação nos cursos MOOC Técnico implica que os utilizadores concordem e cumpram o Código de Conduta abaixo, que tem como compromisso central a honestidade e a integridade académica.<br>
+	    O Código de Conduta definido inclui os princípios que a seguir se apresentam, podendo incluir termos adicionais específicos em cada curso.</p>
+	    <b>Nos cursos MOOC Técnico, cada participante:</b>
+	    <ul>
+	    <li>Inscreve-se em cada curso através de uma só conta de utilizador e não permite que outra pessoa use o seu nome de utilizador e/ou palavra-passe;</li>
+	    <li>Não acede ou tenta aceder à conta de outro utilizador, ou deturpa ou tenta adulterar a sua identidade ao participar nos cursos MOOC Técnico;</li>
+	    <li>Assume o compromisso de resolver honestamente os exercícios e as tarefas propostas em cada curso, com base (e apenas) no seu próprio trabalho (com exceção das situações em que a colaboração é expressamente permitida e necessária como são exemplo os trabalhos em grupo);</li>
+	    <li>Abstém-se de qualquer atividade que possa desonestamente ou de forma fraudulenta melhorar os seus resultados; </li>
+	    <li>Reconhece qualquer e todas as fontes usadas no próprio trabalho.</li>
+	    </ul>
+	    <b>Violações</b><br>
+	    <p>No caso de ser detetada a violação dos Termos e Condições do Serviço ou do Código de Conduta por parte de um participante em cursos MOOC Técnico, o mesmo está sujeito a uma ou mais das seguintes ações:</p>
+	    <ul>
+	    <li>Receber um zero ou não ser avaliado em determinado trabalho, atividade ou tarefa de avaliação</li>
+	    <li>Ter o certificado obtido no curso suspenso ou revogado;</li>
+	    <li>Ser excluído de um curso ou cancelado o seu acesso ao website;</li>
+	    </ul>
+	    <p>Outras ações adicionais podem ser tomadas de acordo com critérios exclusivos dos membros ou provedores do MOOC Técnico.<br>
+	    Nenhum reembolso será emitido no caso de qualquer ação corretiva por essas violações.<br>
+	    Em situações de violação identificadas, o participante MOOC Técnico é notificado e informado sobre a ação correspondente que será tomada como resultado da violação.<br></p>
+
+	    <b>Alterações do Código de Conduta</b><br>
+	    <p>
+	    Este Código de Conduta pode ser revisto e alterado de tempos a tempos. Quaisquer alterações entrarão em vigor imediatamente após a sua publicação nesta página, com atualização da respetiva data. <br>
+	    Ao aceder ao website, após quaisquer alterações que tenham sido feitas, o participante MOOC Técnico manifesta a sua concordância com o Código de Conduta modificado numa base prospetiva. Certifique-se, portanto, que volta a esta página periodicamente para garantir que se encontra atualizado(a) com a versão mais recente do Código de Conduta.
+	    </p>
+
+	    <h2 id="copyright">Copyright</h2>
+	    <h3>Licenciamento de conteúdos</h3>
+	    <p>
+	    Os cursos MOOC Técnico e os seus respetivos conteúdos estão licenciados através da licença<br>
+	    Creative Commons <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Atribuição – Uso Não-Comercial – Proibição de Realização de Obras Derivadas (by-nc-nd).</a>
+	    </p>
+
+	    <img src="https://licensebuttons.net/l/by-nc-nd/3.0/88x31.png">
+	    </section>
+	    </div>
+	    <div class="en translation">
+	    <section class="message left">
+	    <h2 id="honor">Honor Code</h2>
+	    <p>Registration and participation of MOOC Técnico courses imply that the participants agree and meet the following Code of Ethical Conduct, whose main commitment consists of honesty and academic integrity.
+	    The Code of Ethical Conduct hereby includes the below mentioned principles and can add any specific additional terms to each course.</p>
+	    <b>In MOOC Técnico courses, each participant shall:</b>
+	    <ul>
+	    <li>Enrol in each course, using only one user account and never allow another person to use your own user account and/or password;</li>
+	    <li>Not to access or attempt to access another user’s account, or misuse or attempt to misrepresent your identity when participating in MOOC Técnico courses; </li>
+	    <li>Make the commitment to honestly complete all tests and proposed assignments in each course, based (only) on their own work (unless in situations when collaboration is explicitly permitted and even necessary as for instance in group work); </li>
+	    <li>Not engage in any activity that would dishonestly or fraudulently improve their results;  </li>
+	    <li>Recognize any and all sources used in their own work. </li>
+	    </ul>
+	    <b>Violations</b><br>
+	    <p>In case a violation of the Terms of Service or Code of Conduct has been detected by a participant in MOOC Técnico courses, this participant may be subject to one or more of the following actions:</p>
+	    <ul>
+	    <li>Receiving a zero or no credit for a given assignment, activity or assessment task;</li>
+	    <li>Having any certificate earned in the course withheld or revoked;</li>
+	    <li>Being unenrolled from a course or termination of use of the website;</li>
+	    </ul>
+	    <p>Additional actions may be taken according to exclusive criteria of members and coordinators of MOOC Técnico. <br>
+	    No refunds will be issued in the case of any corrective action for such violations.<br>
+	    In the case of identified violations, the participant MOOC Técnico will be notified and informed of the corresponding action to be taken as a result of the violation. <br></p>
+
+	    <b>Changing the Code of Conduct</b><br>
+	    <p>
+	    This Code of Conduct may be reviewed and amended from time to time. Any changes to it will be effective immediately upon posting them on this page, with an updated date.  <br>
+	    By accessing the website, after any changes that have been made, the MOOC Técnico participant signify the agreement on a prospective basis to the modified Honor Code. Be sure to return to this page periodically to ensure familiarity with the most current version of the Code of Conduct.
+	    </p>
+
+
+	    <h2 id="copyright">Copyright</h2>
+	    <h3>Content licensing agreement</h3>
+	    <p>
+	    MOOC Técnico courses and their respective content are licensed under the license<br>
+	    Creative Commons <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution – NonCommercial – NoDerivatives (by-nc-nd).</a>
+	    </p>
+
+	    <img src="https://licensebuttons.net/l/by-nc-nd/3.0/88x31.png">
+	    </section>
+	    </div>
+	    <!-- <section class="static-container tos"> -->
+	    <!-- <h2>Terms of Service</h2>
+
+	    <p> Put your Terms of Service here!</p> -->
+
+	    <!-- <h2 id="privacy">Privacy Policy</h2>
+
+	    <p>Put your Privacy Policy here!</p> -->
+
+	    <!-- <p>Put your Honor Code here!</p> -->
+
+	    <!-- <p>Put your Copyright Text here!</p> -->
+	    </div>
+    </section>
+</main>
+
+<script type="text/javascript">
+	const textPt = $('.pt.translation');
+	const textEn = $('.en.translation');
+
+	$('.pt-text').on('click', function(){
+		$(this).addClass("active");
+		$(this).siblings().removeClass( "active" );
+		textEn.addClass("hidden");
+		textPt.removeClass("hidden");
+	})
+	$('.en-text').on('click', function(){
+		$(this).addClass("active");
+		$(this).siblings().removeClass( "active" );
+		textEn.removeClass("hidden");
+		textPt.addClass("hidden");
+	})
+</script>

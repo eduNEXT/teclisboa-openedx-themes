@@ -1,0 +1,63 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("About")}</%block>
+
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="static-page container about">
+    	<div class="inner-wrapper">
+    		<div class="lang-opt">
+    			<div class="pt-text active" for="pt">Português</div>
+          <div class="en-text" for="en">English</div>
+    		</div>
+          <div class="pt translation">
+	          <section class="message left" id="about">
+	          <center><h2>About</h2></center>
+	          <p>
+	          Os cursos MOOC do Técnico Lisboa são cursos abertos online desenhados para oferecer a melhor formação online, com conteúdos credíveis, relevantes e atuais.<br><br>
+
+	          Os cursos são concebidos por professores ou investigadores do Instituto Superior Técnico ou de entidades parceiras, como é o caso de escolas de ensino superior nacionais e internacionais. A sua preparação técnica e pedagógica e a produção dos conteúdos e recursos educativos multimédia são assegurados por uma equipa multidisciplinar do Núcleo de Multimédia e e-Learning (NME) da Direção de Serviços de Informática (DSI).<br><br>
+
+	          Mais informações podem ser consultadas em:
+	          <a href="http://mooc.tecnico.ulisboa.pt">mooc.tecnico.ulisboa.pt</a><br><br>
+	          </p>
+	          <p>&nbsp;</p>
+	          </section>
+          </div>
+          <div class="en translation hidden">
+	          <section class="message left" id="about">
+	          <center><h2>About</h2></center>
+	          <p>
+	          The MOOC courses of Técnico Lisboa are online open courses designed to offer the best online learning with credible, relevant and cutting-edge contents.<br><br>
+
+	          The courses are designed by professors and researchers of Instituto Superior Técnico or partner institutions, for instance national and international higher schools. Their technical and pedagogical development as were as the production of multimedia educational contents are provided by a multidisciplinary team from the Multimedia and e-Learning Unit (NME).<br><br>
+
+	          Further information can be found in:
+	          <a href="http://mooc.tecnico.ulisboa.pt">mooc.tecnico.ulisboa.pt</a><br><br>
+	          </p>
+	          <p>&nbsp;</p>
+            </section>
+      	</div>
+    	</div>
+    </section>
+</main>
+
+<script type="text/javascript">
+	const textPt = $('.pt.translation');
+	const textEn = $('.en.translation');
+
+	$('.pt-text').on('click', function(){
+		$(this).addClass("active");
+		$(this).siblings().removeClass( "active" );
+		textEn.addClass("hidden");
+		textPt.removeClass("hidden");
+	})
+	$('.en-text').on('click', function(){
+		$(this).addClass("active");
+		$(this).siblings().removeClass( "active" );
+		textEn.removeClass("hidden");
+		textPt.addClass("hidden");
+	})
+</script>
