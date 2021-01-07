@@ -20,6 +20,7 @@ profile_image_url = get_profile_image_urls_for_user(self.real_user)['medium']
 username = self.real_user.username
 resume_block = retrieve_last_sitewide_block_completed(self.real_user)
 displayname = get_enterprise_learner_generic_name(request) or username
+show_gamification = settings.FEATURES.get('RG_GAMIFICATION', {}).get('ENABLED')
 %>
 
 <div class="nav-item hidden-mobile">
@@ -42,6 +43,10 @@ displayname = get_enterprise_learner_generic_name(request) or username
         <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${reverse('account_settings')}" role="menuitem">${_("Account")}</a></div>
         % if should_redirect_to_order_history_microfrontend():
             <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${settings.ORDER_HISTORY_MICROFRONTEND_URL}" role="menuitem">${_("Order History")}</a></div>
+        % endif
+        % if show_gamification and gamma_site_settings and check_gamma_enabled_with_cohorts_settings(self.real_user):
+            <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${reverse('gamma_dashboard:gamma-dashboard')}" role="menuitem">${_("Performance")}</a></div>
+            <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${reverse('gamma_dashboard:gamma-leaderboard')}" role="menuitem">${_("Leaderboard")}</a></div>
         % endif
         <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${reverse('logout')}" role="menuitem">${_("Sign Out")}</a></div>
     </div>
