@@ -207,8 +207,8 @@
 }
 
 .view-profile .badge-set-display .badge-display {
-    width: 100%;
-  }
+	width: 100%;
+}
 
 @media (min-width: 992px) {
 	.global-header .nav-links .main {
@@ -221,6 +221,10 @@
 				color: $link-header-color-hover;
 			}
 		}
+	}
+
+	.course-info .intro-inner-wrapper .media img {
+		height: 140px;
 	}
 }
 
@@ -324,7 +328,7 @@
 	}
 
 	.intro-inner-wrapper > div.table {
-		width: 50%;
+		width: 65%;
 		margin: 0 auto;
 		background: #fff;
 		display: flex;
@@ -332,8 +336,12 @@
 	}
 
 	.intro-inner-wrapper {
-		.media .hero {
-			border: none;
+		.media {
+			min-width: 250px;
+
+			.hero {
+				border: none;
+			}
 		}
 
 		.intro .main-cta a.register,
