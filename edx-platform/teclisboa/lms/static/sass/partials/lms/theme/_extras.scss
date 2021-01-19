@@ -378,6 +378,13 @@
 	}
 }
 
+// Hide link/unlink to/from `Técnico ID` in account page
+div.u-field.u-field-social.u-field-auth-saml-istx-sso,
+div.u-field.u-field-social.u-field-auth-saml-partners-sso,
+div.u-field.u-field-social.u-field-auth-saml-ist {
+	display: none !important;
+}
+
 //Static pages
 .static-page {
 	.pt-text,
